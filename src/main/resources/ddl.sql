@@ -1,0 +1,7 @@
+CREATE TABLE board(
+      id INT PRIMARY KEY AUTO_INCREMENT
+    , title VARCHAR(30) NOT NULL
+    , contents VARCHAR(1000) NOT NULL
+    , created_at DATETIME NOT NULL DEFAULT current_timestamp
+    , updated_at DATETIME ON UPDATE CURRENT_TIMESTAMP
+);
