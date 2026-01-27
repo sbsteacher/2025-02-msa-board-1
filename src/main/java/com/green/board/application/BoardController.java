@@ -1,20 +1,19 @@
 package com.green.board.application;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import com.green.board.application.model.BoardPostReq;
+import lombok.RequiredArgsConstructor;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
+@RequiredArgsConstructor
 public class BoardController {
-    private BoardService boardService;
-    //BoardService 객체 주소값을 받아서 멤버필드에 대입하는 생성자 생성!
-
-
+    private final BoardService boardService;
 
     @PostMapping("/board")
-    public String postBoard() {
-        return "이것은 포스트 통신입니다.";
+    public String postBoard(@RequestBody BoardPostReq req) {
+        System.out.println("req: " + req);
+        int result = boardService.postBoard(req);
+        return result == 1 ? "성공" : "실패";
     }
 
     @GetMapping("/board")
