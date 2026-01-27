@@ -12,6 +12,7 @@ import org.apache.ibatis.annotations.Mapper;
 insert, update, delete 즉, select를 제외하고는 리턴타입 int하시면 된다.
 int값이 affectedRows값이다. 영향받은 행 값
 */
+
 @Mapper
 public interface BoardMapper {
     int save(BoardPostReq req);

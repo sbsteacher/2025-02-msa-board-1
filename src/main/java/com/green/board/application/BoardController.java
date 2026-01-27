@@ -5,12 +5,9 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
+@RequiredArgsConstructor
 public class BoardController {
     private final BoardService boardService;
-
-    public BoardController(BoardService boardService) {
-        this.boardService = boardService;
-    }
 
     /* 파라미터(매개변수)는 FE부터 날라오는 데이터를 받는 용도로 사용
            @RequestBody는 JSON형태로 BODY에 담겨져있는 데이터를 받을 때 사용.

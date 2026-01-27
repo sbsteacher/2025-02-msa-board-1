@@ -12,13 +12,9 @@ import org.springframework.stereotype.Service;
 서비스의 역할은 로직처리 + DB담당자한테 일해라 절해라 할꺼다.
 */
 @Service
-//@RequiredArgsConstructor
+@RequiredArgsConstructor
 public class BoardService {
     private final BoardMapper boardMapper;
-
-    public BoardService(BoardMapper boardMapper) {
-        this.boardMapper = boardMapper;
-    }
 
     public int postBoard(BoardPostReq req) {
         return boardMapper.save(req);
