@@ -7,6 +7,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class BoardController {
+    private BoardService boardService;
+    //BoardService 객체 주소값을 받아서 멤버필드에 대입하는 생성자 생성!
+
+
 
     @PostMapping("/board")
     public String postBoard() {
