@@ -7,4 +7,11 @@
            SET title = #{title}
              , contents = #{contents}
     </insert>
+
+    <select id="findAll">
+        SELECT id, title, created_at AS createdAt
+          FROM board
+         ORDER BY id DESC
+    </select>
+
 </mapper>

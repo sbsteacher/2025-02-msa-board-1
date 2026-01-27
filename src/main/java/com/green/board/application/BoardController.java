@@ -1,8 +1,9 @@
 package com.green.board.application;
 
-import com.green.board.application.model.BoardPostReq;
+import com.green.board.application.model.*;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
+import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
@@ -21,10 +22,7 @@ public class BoardController {
     }
 
     @GetMapping("/board")
-    public String getBoard(@RequestParam int id
-                         , @RequestParam String title) {
-        System.out.println("id: " + id);
-        System.out.println("title: " + title);
-        return "아무거나 적어보슈~~";
+    public List<BoardGetRes> getBoardList() {
+        return boardService.getBoardList();
     }
 }

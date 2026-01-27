@@ -1,8 +1,12 @@
 package com.green.board.application;
 
+import com.green.board.application.model.BoardGetRes;
 import com.green.board.application.model.BoardPostReq;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
+
 /* 서버가 기동되면 @Service 애노테이션 가지고 있는 클래스는
 싱글톤 객체화가 된다. 스프링 컨테이너가 객체화를 한다.
 스프링 컨테이너는 객체의 주소값을 저장하고 있다.
@@ -20,4 +24,7 @@ public class BoardService {
         return boardMapper.save(req);
     }
 
+    public List<BoardGetRes> getBoardList() {
+        return boardMapper.findAll();
+    }
 }

@@ -1,7 +1,10 @@
 package com.green.board.application;
 
+import com.green.board.application.model.BoardGetRes;
 import com.green.board.application.model.BoardPostReq;
 import org.apache.ibatis.annotations.Mapper;
+
+import java.util.List;
 /* BoardMapper 인터페이스와 BoardMapper.xml 파일을 연결한다. 연결은 xml파일에서 namespace에
 인터페이스의 풀네임을 작성으로 한다.
 
@@ -16,4 +19,5 @@ int값이 affectedRows값이다. 영향받은 행 값
 @Mapper
 public interface BoardMapper {
     int save(BoardPostReq req);
+    List<BoardGetRes> findAll();
 }

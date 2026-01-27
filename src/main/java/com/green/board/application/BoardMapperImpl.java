@@ -9,14 +9,13 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 //@Component //빈등록
-public class BoardMapperImpl implements BoardMapper {
+public class BoardMapperImpl {
     private final DataSource dataSource; // Spring에서 관리하는 커넥션 풀
 
     public BoardMapperImpl(DataSource dataSource) {
         this.dataSource = dataSource;
     }
 
-    @Override
     public int save(BoardPostReq req) {
         // 1. SQL 문 (MyBatis XML에 정의된 내용)
         String sql = "INSERT INTO board SET title = ?, contents = ?";
