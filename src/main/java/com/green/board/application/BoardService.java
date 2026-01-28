@@ -3,6 +3,7 @@ package com.green.board.application;
 import com.green.board.application.model.BoardGetOneRes;
 import com.green.board.application.model.BoardGetRes;
 import com.green.board.application.model.BoardPostReq;
+import com.green.board.application.model.BoardPutReq;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -31,6 +32,10 @@ public class BoardService {
 
     public BoardGetOneRes getBoardOne(int id) {
         return boardMapper.findById(id);
+    }
+
+    public int putBoard(BoardPutReq req) {
+        return boardMapper.update(req);
     }
 
     public int delBoard(int id) {

@@ -32,6 +32,12 @@ public class BoardController {
         return boardService.getBoardOne(id);
     }
 
+    @PutMapping("/board")
+    public int putBoard(@RequestBody BoardPutReq req) {
+        System.out.println("req: " + req);
+        return boardService.putBoard(req);
+    }
+
     @DeleteMapping("/board")
     public int delBoard(@RequestParam int id) {
         System.out.println("delete-id: " + id);
