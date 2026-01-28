@@ -31,4 +31,10 @@ public class BoardController {
         System.out.println("id: " + id);
         return boardService.getBoardOne(id);
     }
+
+    @DeleteMapping("/board")
+    public int delBoard(@RequestParam int id) {
+        System.out.println("delete-id: " + id);
+        return boardService.delBoard(id);
+    }
 }

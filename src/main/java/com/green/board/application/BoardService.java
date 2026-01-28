@@ -32,4 +32,8 @@ public class BoardService {
     public BoardGetOneRes getBoardOne(int id) {
         return boardMapper.findById(id);
     }
+
+    public int delBoard(int id) {
+        return boardMapper.delete(id);
+    }
 }

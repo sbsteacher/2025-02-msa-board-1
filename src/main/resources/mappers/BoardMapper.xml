@@ -20,4 +20,8 @@
         WHERE id = #{id}
     </select>
 
+    <delete id="delete">
+        DELETE FROM board WHERE id = #{id}
+    </delete>
+
 </mapper>

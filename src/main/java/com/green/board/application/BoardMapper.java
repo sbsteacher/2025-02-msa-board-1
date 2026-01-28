@@ -22,4 +22,5 @@ public interface BoardMapper {
     int save(BoardPostReq req);
     List<BoardGetRes> findAll();
     BoardGetOneRes findById(int id);
+    int delete(int id);
 }
