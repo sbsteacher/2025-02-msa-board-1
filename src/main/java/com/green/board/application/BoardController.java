@@ -25,4 +25,10 @@ public class BoardController {
     public List<BoardGetRes> getBoardList() {
         return boardService.getBoardList();
     }
+
+    @GetMapping("/board/{id}")
+    public BoardGetOneRes getBoardOne(@PathVariable int id) {
+        System.out.println("id: " + id);
+        return boardService.getBoardOne(id);
+    }
 }
