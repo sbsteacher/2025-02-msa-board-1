@@ -12,3 +12,10 @@ public class BoardGetOneRes {
     private String contents;
     private String createdAt;
 }
+
+
+
+
+
+
+

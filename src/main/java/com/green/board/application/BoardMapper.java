@@ -1,5 +1,6 @@
 package com.green.board.application;
 
+import com.green.board.application.model.BoardGetOneRes;
 import com.green.board.application.model.BoardGetRes;
 import com.green.board.application.model.BoardPostReq;
 import org.apache.ibatis.annotations.Mapper;
@@ -20,4 +21,5 @@ int값이 affectedRows값이다. 영향받은 행 값
 public interface BoardMapper {
     int save(BoardPostReq req);
     List<BoardGetRes> findAll();
+    BoardGetOneRes findById(int id);
 }
